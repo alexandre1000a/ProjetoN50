@@ -1,0 +1,78 @@
+﻿@model TesteMVC.Fornecedor
+@{
+    
+ViewBag.Title = "Index";
+}
+
+<h2>Cadastrar Fornecedor</h2>
+
+
+    @using (@Html.BeginForm("CadastrarFornecedor", "CadastroFornecedor", "POST")) 
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Dados da pessoa</legend>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.razao_social_fornecedor, "Razão Social")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.razao_social_fornecedor)
+                @Html.ValidationMessageFor(m => m.razao_social_fornecedor)
+            </div>
+
+             <div class="editor-label">
+
+                @Html.LabelFor(m => m.cnpj, "CNPJ")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.cnpj)
+                @Html.ValidationMessageFor(m => m.cnpj)
+            </div>
+
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.email, "Email")
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.email)
+                @Html.ValidationMessageFor(m => m.email)
+            </div>
+
+          
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.telefone, "Telefone")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.telefone)
+                @Html.ValidationMessageFor(m => m.telefone)
+            </div>
+
+            <div>
+            <p><input type="submit" value="Cadastrar" /></p>
+            </div>
+            
+     
+     
+            </fieldset>
+}
+ 
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

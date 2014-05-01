@@ -1,0 +1,104 @@
+﻿@model TesteMVC.Endereco
+@{
+    ViewBag.Title = "CadastroFornecedorEndereco";
+}
+
+<h2>Cadastrar Endereço Fornecedor</h2>
+
+
+
+    @using (@Html.BeginForm("CadastroEnderecoFornecedorEfetuado", "CadastrarEnderecoFornecedor", "POST")) 
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Dados da pessoa</legend>
+
+        
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.rua, "Rua")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.rua)
+                @Html.ValidationMessageFor(m => m.rua)
+            </div>
+
+             <div class="editor-label">
+
+                @Html.LabelFor(m => m.numero, "Número")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.numero)
+                @Html.ValidationMessageFor(m => m.numero)
+            </div>
+
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.cep, "CEP")
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.cep)
+                @Html.ValidationMessageFor(m => m.cep)
+            </div>
+
+            <div class="editor-label">
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.cidade, "Cidade")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.cidade)
+                @Html.ValidationMessageFor(m => m.cidade)
+            </div>
+
+                 <div class="editor-label">
+
+                @Html.LabelFor(m => m.estado, "Estado")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.estado)
+                @Html.ValidationMessageFor(m => m.estado)
+            </div>
+
+
+                 <div class="editor-label">
+
+                @Html.LabelFor(m => m.pais, "Pais")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.pais)
+                @Html.ValidationMessageFor(m => m.pais)
+            </div>
+
+
+         <div>
+            <p><input type="submit" value="Cadastrar" /></p>
+            </div>
+            
+     
+     
+            </fieldset>
+}
+
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

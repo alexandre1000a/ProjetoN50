@@ -1,0 +1,52 @@
+﻿@model TesteMVC.Usuarios
+@{
+    ViewBag.Title = "Index";
+}
+
+
+    @using (@Html.BeginForm("ValidaUsuario","ValidarUsuario","POST")) 
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Login</legend>
+
+             <div class="editor-label">
+
+                @Html.LabelFor(m => m.email_usuario, "E-mail")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.email_usuario)
+                @Html.ValidationMessageFor(m => m.email_usuario)
+            </div>
+
+
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.senha, "Senha")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.PasswordFor(m => m.senha)
+                @Html.ValidationMessageFor(m => m.senha)
+            </div>
+
+          
+           <div>
+            <p> <input type="submit" value="Entrar" /></p>
+            </div>
+            
+            </fieldset>
+}
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

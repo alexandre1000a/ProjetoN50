@@ -1,0 +1,55 @@
+﻿@model System.Collections.Generic.IEnumerable<TesteMVC.pc_relatorio_pagamento1_Result>
+@{
+    ViewBag.Title = "RetornaRelatorio";
+}
+
+<h2>Relatório de Pagamento</h2>
+
+<fieldset>
+    <legend>Valores em Aberto a serem Pagos</legend>
+<table runat="server" class="table col" >
+    
+            
+      <tr>
+          <th>Data</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Valor R$</th>
+      </tr>  
+     
+    
+            @foreach (var item in Model)
+            {
+                <tr>
+                
+                   
+                    <td>
+                       @item.data_pagamento
+                    </td>
+                                   
+                  <td>
+                    @item.nome
+                  </td>
+                   
+                       <td>
+                        @item.descricao
+                      </td>
+                  <td>
+                        @item.valor_a_pagar
+                  </td>
+                   
+             </tr>               
+             
+                
+            }
+    
+</table>
+ 
+
+    <div>
+         @Html.ActionLink("Home","LoginHome","Login")
+         @Html.ActionLink("Sair","Index","Login")
+        <input type="image" src="print.gif" onclick="window.print()" value="Imprimir" />
+    </div>
+    
+    </fieldset>

@@ -1,0 +1,97 @@
+﻿@model TesteMVC.Contas_a_Receber
+@{
+    ViewBag.Title = "RecebePagamentoCliente";
+}
+
+<h2>Recebe Pagamento</h2>
+
+  @using (@Html.BeginForm("BaixaPagamentoRecebido", "ReceberPagamento", "POST")) 
+    {
+    //foreach (var item in Model)
+    //{
+    
+
+     
+        @Html.ValidationSummary(true)     
+
+         <fieldset>
+            <legend>Recebe Pagamento Cliente</legend>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m=> m.id_cliente,"Id Cliente")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.DisplayTextFor(m => m.id_cliente)
+                @Html.ValidationMessageFor(m => m.id_cliente)
+            </div>
+
+
+               <div class="editor-label">
+
+                @Html.LabelFor(m=> m.data_a_receber,"Data Prevista Recebimento")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.DisplayTextFor(m => m.data_a_receber)
+                @Html.ValidationMessageFor(m => m.data_a_receber)
+            </div>
+
+
+             
+                <div class="editor-label">
+
+                @Html.LabelFor(m=> m.data_recebimento,"Data do Recebimento")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.data_recebimento)
+                @Html.ValidationMessageFor(m => m.data_recebimento)
+            </div>
+
+               <div class="editor-label">
+
+                @Html.LabelFor(m=> m.valor_a_receber,"Valor")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.DisplayTextFor(m => m.valor_a_receber)
+                @Html.ValidationMessageFor(m => m.valor_a_receber)
+            </div>
+
+
+               <div class="editor-label">
+
+                @Html.LabelFor(m=> m.valor_recebido,"Valor Recebido")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.valor_recebido)
+                @Html.ValidationMessageFor(m => m.valor_recebido)
+            </div>
+
+
+           <div>
+            <p><input type="submit" value="Cadastrar" /></p>
+            </div>
+           
+            </fieldset>
+          
+     
+      
+}
+    }
+
+
+ 
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

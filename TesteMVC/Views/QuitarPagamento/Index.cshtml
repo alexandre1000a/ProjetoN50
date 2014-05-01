@@ -1,0 +1,38 @@
+﻿@model System.Collections.Generic.IEnumerable<TesteMVC.Fornecedor>
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+    <body>
+
+<h2>Quitar Pagamento Fornecedores</h2>
+
+
+
+<table runat="server" class="table" >
+
+   <tr>
+       <th>Fornecedor</th>
+       <th>Quitar Pagamento</th>
+   </tr>
+            @foreach (var item in Model)
+            {
+                <tr>    
+                    <td>
+                        @item.nome
+                    </td>
+                            
+                     <td>     @Html.ActionLink("Quitar Pagamento", "RecebePagamento","QuitarPagamento", new {id_fornecedor= @item.id_fornecedor}, null)  </td>
+                    
+                </tr>
+             
+                
+            }
+
+
+       
+    
+</table>
+    </body>
+</html>
+ 

@@ -1,0 +1,77 @@
+﻿@model TesteMVC.Contas_a_Receber
+@{
+    
+ViewBag.Title = "Index";
+}
+
+<h2>Contas À Receber</h2>
+
+
+
+    @using (@Html.BeginForm("ContasAReceber", "ContasReceber", "POST")) 
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Dados da Venda</legend>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.data_a_receber, "Data da Venda")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.data_a_receber)
+                @Html.ValidationMessageFor(m => m.data_a_receber)
+            </div>
+
+       
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.descrição, "Descrição")
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.descrição)
+                @Html.ValidationMessageFor(m => m.descrição)
+            </div>
+
+          
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.valor_a_receber, "Valor da Venda")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.valor_a_receber)
+                @Html.ValidationMessageFor(m => m.valor_a_receber)
+            </div>
+
+
+            
+            <div>
+            <p><input type="submit" value="Cadastrar" /></p>
+            </div>
+            
+     
+     
+            </fieldset>
+}
+ 
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+    
+    

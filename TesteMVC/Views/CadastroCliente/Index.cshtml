@@ -1,0 +1,100 @@
+﻿@model TesteMVC.Cliente
+@{
+    
+ViewBag.Title = "Index";
+}
+
+<h2>Cadastrar Cliente</h2>
+
+
+
+    @using (@Html.BeginForm("CadastrarCliente", "CadastroCliente", "POST")) 
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Dados da pessoa</legend>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.nome_cliente, "Nome")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.nome_cliente)
+                @Html.ValidationMessageFor(m => m.nome_cliente)
+            </div>
+
+             <div class="editor-label">
+
+                @Html.LabelFor(m => m.RG, "Rg")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.RG)
+                @Html.ValidationMessageFor(m => m.RG)
+            </div>
+
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.CPF, "CPF")
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.CPF)
+                @Html.ValidationMessageFor(m => m.CPF)
+            </div>
+
+          
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.data_nascimento, "Data de Nascimento")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.data_nascimento)
+                @Html.ValidationMessageFor(m => m.data_nascimento)
+            </div>
+
+             <div class="editor-label">
+
+                @Html.LabelFor(m => m.email, "Email")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.email)
+                @Html.ValidationMessageFor(m => m.email)
+            </div>
+
+             <div class="editor-label">
+
+                @Html.LabelFor(m => m.telefone, "Telefone")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.telefone)
+                @Html.ValidationMessageFor(m => m.telefone)
+            </div>
+
+            <div>
+            <p><input type="submit" value="Cadastrar" /></p>
+            </div>
+            
+     
+     
+            </fieldset>
+}
+ 
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

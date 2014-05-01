@@ -1,0 +1,76 @@
+﻿@model TesteMVC.Usuarios
+@{
+    
+ViewBag.Title = "Index";
+}
+
+<html>
+    <body>
+<h2>Cadastrar Usuário</h2>
+    @using (@Html.BeginForm("Resultado","Home","POST")) 
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Dados da pessoa</legend>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.nome_usuario, "Nome")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.nome_usuario)
+                @Html.ValidationMessageFor(m => m.nome_usuario)
+            </div>
+
+             <div class="editor-label">
+
+                @Html.LabelFor(m => m.email_usuario, "E-mail")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.email_usuario)
+                @Html.ValidationMessageFor(m => m.email_usuario)
+            </div>
+
+
+           <div class="editor-label">
+
+                @Html.LabelFor(m => m.senha, "Senha")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.PasswordFor(m => m.senha)
+                @Html.ValidationMessageFor(m => m.senha)
+            </div>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.confirmar_senha, "Confirmar Senha")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.PasswordFor(m => m.confirmar_senha)
+                @Html.ValidationMessageFor(m => m.confirmar_senha)
+            </div>
+
+           
+
+           <div>
+            <p><input type="submit" value="Cadastrar" /></p>
+            </div>
+            </fieldset>
+}
+ @Html.ActionLink("Entrar","Index","ValidarUsuario")
+    </body>
+</html>
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

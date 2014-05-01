@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="testeModelStoreContainer" CdmEntityContainer="testeEntities2">
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="testeModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="RG" ColumnName="RG" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="data_nascimento" ColumnName="data_nascimento" />
+          <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+          <ScalarProperty Name="id_endereco" ColumnName="id_endereco" />
+          <ScalarProperty Name="id_status_cliente" ColumnName="id_status_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contas_a_Receber">
+      <EntityTypeMapping TypeName="testeModel.Contas_a_Receber">
+        <MappingFragment StoreEntitySet="Contas_a_Receber">
+          <ScalarProperty Name="id_contas_a_receber" ColumnName="id_contas_a_receber" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="descrição" ColumnName="descrição" />
+          <ScalarProperty Name="valor_a_receber" ColumnName="valor_a_receber" />
+          <ScalarProperty Name="valor_recebido" ColumnName="valor_recebido" />
+          <ScalarProperty Name="data_a_receber" ColumnName="data_a_receber" />
+          <ScalarProperty Name="data_recebimento" ColumnName="data_recebimento" />
+          <ScalarProperty Name="valor_juros_recebimento" ColumnName="valor_juros_recebimento" />
+          <ScalarProperty Name="valor_desconto_recebimento" ColumnName="valor_desconto_recebimento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Endereco">
+      <EntityTypeMapping TypeName="testeModel.Endereco">
+        <MappingFragment StoreEntitySet="Endereco">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="complemento" ColumnName="complemento" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fornecedor">
+      <EntityTypeMapping TypeName="testeModel.Fornecedor">
+        <MappingFragment StoreEntitySet="Fornecedor">
+          <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="razao_social_fornecedor" ColumnName="razao_social_fornecedor" />
+          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="id_endereco" ColumnName="id_endereco" />
+          <ScalarProperty Name="id_status_fornecedor" ColumnName="id_status_fornecedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_Usuario_Fornecedor">
+      <EntityTypeMapping TypeName="testeModel.Status_Usuario_Fornecedor">
+        <MappingFragment StoreEntitySet="Status_Usuario_Fornecedor">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="status_Ativo_Inativo" ColumnName="status_Ativo_Inativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="testeModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nome_usuario" ColumnName="nome_usuario" />
+          <ScalarProperty Name="email_usuario" ColumnName="email_usuario" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="confirmar_senha" ColumnName="confirmar_senha" />
+          <ScalarProperty Name="id_endereco" ColumnName="id_endereco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contas_a_Pagar">
+      <EntityTypeMapping TypeName="testeModel.Contas_a_Pagar">
+        <MappingFragment StoreEntitySet="Contas_a_Pagar">
+          <ScalarProperty Name="valor_unitario" ColumnName="valor_unitario" />
+          <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+          <ScalarProperty Name="produto_contasapagar" ColumnName="produto_contasapagar" />
+          <ScalarProperty Name="valor_deconto_pago" ColumnName="valor_deconto_pago" />
+          <ScalarProperty Name="valor_juros_pago" ColumnName="valor_juros_pago" />
+          <ScalarProperty Name="data_valor_pago" ColumnName="data_valor_pago" />
+          <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
+          <ScalarProperty Name="valor_pago" ColumnName="valor_pago" />
+          <ScalarProperty Name="valor_a_pagar" ColumnName="valor_a_pagar" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="id_contas_a_pagar" ColumnName="id_contas_a_pagar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Status_Fornecedor_1" FunctionName="testeModel.Store.Status_Fornecedor_1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testeModel.Status_Fornecedor_1_Result">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="status_Ativo_Inativo" ColumnName="status_Ativo_Inativo" />
+          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="id_status_fornecedor" ColumnName="id_status_fornecedor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pc_Relatorio_inadimplente_1" FunctionName="testeModel.Store.pc_Relatorio_inadimplente_1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testeModel.pc_Relatorio_inadimplente_1_Result">
+          <ScalarProperty Name="id_contas_a_receber" ColumnName="id_contas_a_receber" />
+          <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+          <ScalarProperty Name="descrição" ColumnName="descrição" />
+          <ScalarProperty Name="valor_a_receber" ColumnName="valor_a_receber" />
+          <ScalarProperty Name="valor_recebido" ColumnName="valor_recebido" />
+          <ScalarProperty Name="data_a_receber" ColumnName="data_a_receber" />
+          <ScalarProperty Name="valor_juros_recebimento" ColumnName="valor_juros_recebimento" />
+          <ScalarProperty Name="valor_desconto_recebimento" ColumnName="valor_desconto_recebimento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pc_relatorio_pagamento" FunctionName="testeModel.Store.pc_relatorio_pagamento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testeModel.pc_relatorio_pagamento_Result">
+          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
+          <ScalarProperty Name="valor_a_pagar" ColumnName="valor_a_pagar" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pc_status_cliente2" FunctionName="testeModel.Store.pc_status_cliente2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testeModel.pc_status_cliente2_Result">
+          <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+          <ScalarProperty Name="status_Ativo_Inativo" ColumnName="status_Ativo_Inativo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pc_status_cliente3" FunctionName="testeModel.Store.pc_status_cliente3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testeModel.pc_status_cliente3_Result">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+          <ScalarProperty Name="status_Ativo_Inativo" ColumnName="status_Ativo_Inativo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pc_status_cliente4" FunctionName="testeModel.Store.pc_status_cliente4">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testeModel.pc_status_cliente4_Result">
+          <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="status_Ativo_Inativo" ColumnName="status_Ativo_Inativo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pc_status_fornecedor2" FunctionName="testeModel.Store.pc_status_fornecedor2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testeModel.pc_status_fornecedor2_Result">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="status_Ativo_Inativo" ColumnName="status_Ativo_Inativo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pc_relatorio_pagamento1" FunctionName="testeModel.Store.pc_relatorio_pagamento1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testeModel.pc_relatorio_pagamento1_Result">
+          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="data_pagamento" ColumnName="data_pagamento" />
+          <ScalarProperty Name="valor_a_pagar" ColumnName="valor_a_pagar" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

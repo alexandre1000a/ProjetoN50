@@ -1,0 +1,88 @@
+﻿@model TesteMVC.Contas_a_Pagar
+@{
+    
+ViewBag.Title = "Index";
+}
+
+    @using (@Html.BeginForm("ContasAPagar", "ContasPagar", "POST")) 
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Dados da Compra</legend>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.data_pagamento, "Data Agendamento")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.data_pagamento)
+                @Html.ValidationMessageFor(m => m.data_pagamento)
+            </div>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.produto_contasapagar, "Produto")
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.produto_contasapagar)
+                @Html.ValidationMessageFor(m => m.produto_contasapagar)
+            </div>
+
+              <div class="editor-label">
+
+                @Html.LabelFor(m => m.descricao, "Descrição")
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.descricao)
+                @Html.ValidationMessageFor(m => m.descricao)
+            </div>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.quantidade, "quantidade")
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.quantidade)
+                @Html.ValidationMessageFor(m => m.quantidade)
+            </div>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.valor_unitario, "Valor Unitário")
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.valor_unitario)
+                @Html.ValidationMessageFor(m => m.valor_unitario)
+            </div>
+       
+          
+            <div class="editor-label">
+
+                @Html.LabelFor(m => m.valor_a_pagar, "Valor do Pagamento")
+                
+            </div>
+            <div class="editor-field">
+
+                @Html.EditorFor(m => m.valor_a_pagar)
+                @Html.ValidationMessageFor(m => m.valor_a_pagar)
+            </div>
+
+            <div>
+            <p><input type="submit" value="Cadastrar" /></p>
+            </div>
+                 
+            </fieldset>
+}
+ 
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

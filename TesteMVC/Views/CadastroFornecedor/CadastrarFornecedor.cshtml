@@ -1,0 +1,10 @@
+﻿@model TesteMVC.Fornecedor
+@{
+    ViewBag.Title = "CadastrarFornecedor";
+}
+
+<h2>Cadastro Efetuado com Sucesso </h2>
+
+
+@Html.ActionLink("Gerar Compra","Index","ContasPagar", new {id_fornecedor= @Model.id_fornecedor},null)
+@Html.ActionLink("Cadastrar Endereço","CadastradoFornecedorEndereco","CadastroFornecedor", new {id_fornecedor= @Model.id_fornecedor},null)

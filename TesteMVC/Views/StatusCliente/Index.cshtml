@@ -1,0 +1,54 @@
+﻿@model System.Collections.Generic.IEnumerable<TesteMVC.pc_status_cliente4_Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Alterar Status Cliente</h2>
+
+
+<fieldset>
+    <legend>Status</legend>
+<table runat="server" class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Editar Status</th>
+        <th>Status</th>
+    </tr>
+
+    
+            @foreach (var item in Model)
+            {
+                
+                <tr>    
+                    <td>
+                        @item.nome_cliente 
+                    </td>
+              
+                     <td> 
+                            @Html.ActionLink("Ativar/Desativar Cadastro", "RecebeStatusCliente","StatusCliente", new {id_cliente= @item.id_cliente}, null)
+                     </td>
+             
+                    <td>
+                        <div class="status-Ativo">
+                      
+                        @if(@item.status_Ativo_Inativo == 1)
+                        {
+                             <p> Ativo</p>
+                        }
+                            </div>
+                        
+                     <div class="status-Inativo">
+                         @if (@item.status_Ativo_Inativo == 2)
+                        {
+                            <p>Inativo</p>
+                        }                    
+                       </div>
+                    </td>                         
+                </tr>
+                
+            }
+
+</table>
+
+    </fieldset>

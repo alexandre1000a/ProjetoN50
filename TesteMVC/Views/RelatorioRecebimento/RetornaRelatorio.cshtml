@@ -1,0 +1,56 @@
+﻿@model System.Collections.Generic.IEnumerable<TesteMVC.pc_Relatorio_inadimplente_1_Result>
+@{
+    ViewBag.Title = "RetornaRelatorio";
+}
+
+<h2>Relatório Inadimplente</h2>
+<br/>
+<fieldset>
+      
+      <legend> Valores À Receber</legend>
+<table runat="server" class="table" >
+  
+    
+            
+      <tr>
+          <th>Data</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Valor R$</th>
+      </tr>     
+   
+            @foreach (var item in Model)
+            {
+                
+                <tr>
+                       
+                    <td>
+                        
+                       @item.data_a_receber
+                    </td>
+                  <td>
+                    @item.nome_cliente
+                  </td>
+
+                       <td>
+                        @item.descrição
+                    </td>
+                  <td>
+                        @item.valor_a_receber
+                  </td>
+                   
+                </tr>
+             
+                
+            }
+    
+</table>
+
+
+    <div>
+         @Html.ActionLink("Home","Index","HomeLogin")
+         @Html.ActionLink("Sair","Index","ValidarUsuario")
+        <input type="image" src="print.gif" onclick="window.print()" value="Imprimir" />
+    </div>
+    </fieldset>
+

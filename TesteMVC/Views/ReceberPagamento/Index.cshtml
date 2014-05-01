@@ -1,0 +1,42 @@
+﻿@model System.Collections.Generic.IEnumerable<TesteMVC.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Quitar Pagamento Cliente</h2>
+
+<table runat="server">
+
+
+              
+   
+        <tr>Clientes </tr>
+        @foreach (var item in Model)
+        {
+<tr>    
+                    <td>
+                        @item.nome_cliente
+            </td>
+                            
+                     <td>
+                                  
+                            @Html.ActionLink("Quitar Pagamento Cliente", "RecebePagamentoCliente", "ReceberPagamento", new { id_cliente = @item.id_cliente }, null)  </td>
+                    
+                </tr>
+             
+        }
+
+
+    
+
+</table>
+
+
+
+<div>
+    @Html.ActionLink("Home", "LoginHome", "Login")
+    @Html.ActionLink("Sair", "Index", "Login")
+</div>
+
+

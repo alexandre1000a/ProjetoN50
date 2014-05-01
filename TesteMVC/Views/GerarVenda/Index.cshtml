@@ -1,0 +1,26 @@
+﻿@model System.Collections.Generic.IEnumerable<TesteMVC.Cliente>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Gerar Venda</h2>
+
+
+<table runat="server" >
+
+    
+    <tr><b> Nome </b> </tr>
+            @foreach (var item in Model)
+            {
+                <tr>    
+                    <td>
+                        @item.nome_cliente 
+                    </td>
+                  @*<a href="~/CadastrarEnderecoCliente/CadastrarEndereco?id=@item.id_cliente">Cadasdrar Endereço</a>*@
+                     <td>     @Html.ActionLink("Gerar Venda", "index","ContasReceber", new {id_cliente= @item.id_cliente}, null)  </td>
+             
+                                 
+                </tr>
+             
+                
+            }
