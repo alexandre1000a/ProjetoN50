@@ -93,22 +93,6 @@ C:\Users\Alexandre\Documents\Visual Studio 2012\Projects\TesteMVC\TesteMVC\obj\D
 C:\Users\Alexandre\Documents\Visual Studio 2012\Projects\TesteMVC\TesteMVC\obj\Debug\TesteMVC.pdb
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\TesteMVC.dll
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\TesteMVC.pdb
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\Antlr3.Runtime.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\EntityFramework.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\Microsoft.Web.Infrastructure.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\Newtonsoft.Json.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Net.Http.Formatting.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.Http.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.Http.WebHost.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.Mvc.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.Optimization.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.Providers.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.Razor.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.WebPages.Deployment.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.WebPages.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.WebPages.Razor.dll
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\WebGrease.dll
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\EntityFramework.xml
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\Newtonsoft.Json.xml
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Net.Http.Formatting.xml
@@ -122,3 +106,5 @@ C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\obj\Debug\TesteMVC.dll
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\obj\Debug\TesteMVC.pdb
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\obj\Debug\TesteMVC.csprojResolveAssemblyReference.cache
+C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\Microsoft.Web.XmlTransform.dll
+C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\NuGet.Core.dll
