@@ -119,6 +119,5 @@ C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.WebPages.xml
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.WebPages.Deployment.xml
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\bin\System.Web.WebPages.Razor.xml
-C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\obj\Debug\TesteMVC.csprojResolveAssemblyReference.cache
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\obj\Debug\TesteMVC.dll
 C:\Backp D\Uniderp\TADS N50\Projeto N50\TesteMVC\ProjetoN50\TesteMVC\obj\Debug\TesteMVC.pdb

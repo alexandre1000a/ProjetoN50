@@ -15,7 +15,7 @@
         
     
     <tr>
-      <th>Nome</th>
+      <th>Razão Social</th>
         <th>Cadastrar</th>
         <th>Editar</th>
 
@@ -24,7 +24,7 @@
             {
                 <tr>    
                     <td>
-                        @item.nome
+                        @item.razao_social_fornecedor
                     </td>
                   @*<a href="~/CadastrarEnderecoCliente/CadastrarEndereco?id=@item.id_cliente">Cadasdrar Endereço</a>*@
                      <td>     @Html.ActionLink("Cadastrar Endereço", "CadastradoFornecedorEndereco","CadastrarEnderecoFornecedor", new {id_fornecedor= @item.id_fornecedor}, null)  </td>
