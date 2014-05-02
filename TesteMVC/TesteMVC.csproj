@@ -229,13 +229,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\bootstrap.css" />
-    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\plugins\dataTables\dataTables.bootstrap.css" />
     <Content Include="Content\css\plugins\morris\morris-0.4.3.min.css" />
     <Content Include="Content\css\plugins\social-buttons\social-buttons.css" />
     <Content Include="Content\css\plugins\timeline\timeline.css" />
-    <Content Include="Content\css\sb-admin.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
