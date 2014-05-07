@@ -23,17 +23,13 @@ namespace TesteMVC.Models
                 {
                     contexto.Usuarios.Add(usuarios);
                     contexto.SaveChanges();
-                    
-               
                 }
             }
             catch (SqlException)
             {
                 throw;
             }
-
         }
-
 
         public void InserirTableFornecedor(Fornecedor fornecedor)
         {
@@ -43,14 +39,12 @@ namespace TesteMVC.Models
                 {
                     contexto.Fornecedor.Add(fornecedor);
                     contexto.SaveChanges();
-                  
                 }
             }
             catch (SqlException)
             {
                 throw;
             }
-
         }
 
         public void InserirTableCliente(Cliente cliente)
@@ -63,7 +57,7 @@ namespace TesteMVC.Models
                     contexto.SaveChanges();
                 }
                     
-                }
+            }
             
             catch (SqlException)
             {
@@ -88,7 +82,6 @@ namespace TesteMVC.Models
             {
                 throw;
             }
-
         }
 
         public void InserirTableContasAPagar(Contas_a_Pagar contaspagar)
@@ -100,14 +93,12 @@ namespace TesteMVC.Models
                     contexto.Contas_a_Pagar.Add(contaspagar);
                     contexto.SaveChanges();
                 }
-
             }
 
             catch (SqlException)
             {
                 throw;
             }
-
         }
 
         public void InserirTableEndereco(Endereco endereco)
@@ -118,7 +109,6 @@ namespace TesteMVC.Models
                 {
                     contexto.Endereco.Add(endereco);
                    var geraId= contexto.SaveChanges();
-                   
                 }
             }
             catch (SqlException)
@@ -126,8 +116,7 @@ namespace TesteMVC.Models
                 throw;
             }
         }
-
-
+        
         public List<Endereco> BuscarEnderecoCliente(Cliente cliente)
         {
           
@@ -139,7 +128,6 @@ namespace TesteMVC.Models
                         if (cliente.id_endereco == null)
                         {
                             return null;
-
                         }
                         else { 
 
@@ -251,7 +239,6 @@ namespace TesteMVC.Models
                     contexto.Usuarios.Remove(recebeid);
                     contexto.SaveChanges();
                 }
-                
             }
         }
 
