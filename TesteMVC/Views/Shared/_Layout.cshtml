@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/Content/menu.css" rel="stylesheet" />
+    <link href="~/Content/base.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/ajax")
     @Styles.Render("~/Content/fonts")
@@ -12,9 +14,64 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="~/Content/themes/base/images/logo%20projeto.png" />
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <div id='cssmenu'>
+                    <ul>
+                        <li class='active'><a href='Home/index'><span>Home</span></a></li>
+                        <li class='has-sub'><a href='#'><span>Clientes</span></a>
+                            <ul>
+                                <li><a href='CadastroCliente/index'><span>Cadastrar Clientes</span></a></li>
+                                <li><a href='#'><span>Cadastrar Endereço Clientes</span></a></li>
+                                <li><a href='#'><span>Gerar Venda</span></a></li>
+                                <li class='last'><a href='#'><span>Status Cliente</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='has-sub'><a href='#'><span>Fornecedor</span></a>
+                            <ul>
+                                <li><a href='#'><span>Cadastrar Fornecedor</span></a></li>
+                                <li><a href='#'><span>Cadastrar Endereço Fornecedor</span></a></li>
+                                <li><a href='#'><span>Gerar Compra</span></a></li>
+                                <li class='last'><a href='#'><span>Status Fornecedor</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='has-sub'><a href='#'><span>Pagamento</span></a>
+                            <ul>
+                                <li><a href='#'><span>Quitar Pagamento</span></a></li>
+                                <li class='last'><a href='#'><span>Receber Pagamento</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='last'><a href='#'><span>Contatos</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                @RenderBody()
+
+                @Scripts.Render("~/bundles/jquery")
+                @RenderSection("scripts", required: false)
+
+                @if (Session.Count == 1)
+                { 
+                    <div>
+                        @Html.ActionLink("Home", "Index", "HomeLogin")
+                        @Html.ActionLink("Sair", "Index", "ValidarUsuario")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="@Url.Content("~/Scripts/MenuDropDown.js")"></script>
+
 </body>
 </html>

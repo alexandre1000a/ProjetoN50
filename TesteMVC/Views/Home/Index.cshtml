@@ -3,9 +3,6 @@
     
 ViewBag.Title = "Index";
 }
-
-<html>
-    <body>
 <h2>Cadastrar Usuário</h2>
     @using (@Html.BeginForm("Resultado","Home","POST")) 
     {
@@ -67,8 +64,6 @@ ViewBag.Title = "Index";
             </fieldset>
 }
  @Html.ActionLink("Entrar","Index","ValidarUsuario")
-    </body>
-</html>
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
