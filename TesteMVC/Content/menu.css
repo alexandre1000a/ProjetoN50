@@ -64,18 +64,18 @@
   background: linear-gradient(#66665e 0%, #45463d 100%);
 }
 #cssmenu > ul > li {
-  background: #e94f31;
-  background: -moz-linear-gradient(#e94f31 0%, #d13516 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e94f31), color-stop(100%, #d13516));
-  background: -webkit-linear-gradient(#e94f31 0%, #d13516 100%);
-  background: linear-gradient(#e94f31 0%, #d13516 100%);
+  background: #1fbe0d;
+  background: -moz-linear-gradient(#bbf2cb 0%, #1fbe0d 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1fbe0d), color-stop(100%, #1fbe0d));
+  background: -webkit-linear-gradient(#bbf2cb 0%, #1fbe0d 100%);
+  background: linear-gradient(#bbf2cb 0%, #1fbe0d 100%);
 }
 #cssmenu > ul > li:hover {
-  background: #e84323;
-  background: -moz-linear-gradient(#e84323 0%, #c33115 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e84323), color-stop(100%, #c33115));
-  background: -webkit-linear-gradient(#e84323 0%, #c33115 100%);
-  background: linear-gradient(#e84323 0%, #c33115 100%);
+  background: #1fbe0d;
+  background: -moz-linear-gradient(#1fbe0d 0%, #1fbe0d 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1fbe0d), color-stop(100%, #1fbe0d));
+  background: -webkit-linear-gradient(#1fbe0d 0%, #1fbe0d 100%);
+  background: linear-gradient(#1fbe0d 0%, #1fbe0d 100%);
 }
 #cssmenu > ul > li > a {
   font-size: 14px;

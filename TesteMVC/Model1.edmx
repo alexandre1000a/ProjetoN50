@@ -5,216 +5,216 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="testeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="testeModelStoreContainer">
-    <EntitySet Name="Cliente" EntityType="testeModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Contas_a_Receber" EntityType="testeModel.Store.Contas_a_Receber" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Endereco" EntityType="testeModel.Store.Endereco" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Fornecedor" EntityType="testeModel.Store.Fornecedor" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Status_Usuario_Fornecedor" EntityType="testeModel.Store.Status_Usuario_Fornecedor" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Usuarios" EntityType="testeModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Contas_a_Pagar" EntityType="testeModel.Store.Contas_a_Pagar" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="fk_cliente_idcliente" Association="testeModel.Store.fk_cliente_idcliente">
-      <End Role="Endereco" EntitySet="Endereco" />
-      <End Role="Cliente" EntitySet="Cliente" />
-    </AssociationSet>
-    <AssociationSet Name="fk_cliente_Status_Cliente" Association="testeModel.Store.fk_cliente_Status_Cliente">
-      <End Role="Status_Usuario_Fornecedor" EntitySet="Status_Usuario_Fornecedor" />
-      <End Role="Cliente" EntitySet="Cliente" />
-    </AssociationSet>
-    <AssociationSet Name="fk_contas_a_receber_id_cliente" Association="testeModel.Store.fk_contas_a_receber_id_cliente">
-      <End Role="Cliente" EntitySet="Cliente" />
-      <End Role="Contas_a_Receber" EntitySet="Contas_a_Receber" />
-    </AssociationSet>
-    <AssociationSet Name="fk_endereco_id_fornecedor" Association="testeModel.Store.fk_endereco_id_fornecedor">
-      <End Role="Endereco" EntitySet="Endereco" />
-      <End Role="Fornecedor" EntitySet="Fornecedor" />
-    </AssociationSet>
-    <AssociationSet Name="fk_usuarios_idEndereco" Association="testeModel.Store.fk_usuarios_idEndereco">
-      <End Role="Endereco" EntitySet="Endereco" />
-      <End Role="Usuarios" EntitySet="Usuarios" />
-    </AssociationSet>
-    <AssociationSet Name="fk_fornecedor_Status_Fornecedor" Association="testeModel.Store.fk_fornecedor_Status_Fornecedor">
-      <End Role="Status_Usuario_Fornecedor" EntitySet="Status_Usuario_Fornecedor" />
-      <End Role="Fornecedor" EntitySet="Fornecedor" />
-    </AssociationSet>
-    <AssociationSet Name="fk_contas_a_pagar_id_fornecedor" Association="testeModel.Store.fk_contas_a_pagar_id_fornecedor">
-      <End Role="Fornecedor" EntitySet="Fornecedor" />
-      <End Role="Contas_a_Pagar" EntitySet="Contas_a_Pagar" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Cliente">
-    <Key>
-      <PropertyRef Name="id_cliente" />
-    </Key>
-    <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RG" Type="int" Nullable="true" />
-    <Property Name="CPF" Type="int" Nullable="true" />
-    <Property Name="data_nascimento" Type="datetime" Nullable="true" />
-    <Property Name="nome_cliente" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="id_endereco" Type="int" Nullable="true" />
-    <Property Name="id_status_cliente" Type="int" Nullable="true" />
-    <Property Name="email" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="telefone" Type="decimal" Nullable="true" Precision="18" Scale="0" />
-  </EntityType>
-  <EntityType Name="Contas_a_Receber">
-    <Key>
-      <PropertyRef Name="id_contas_a_receber" />
-    </Key>
-    <Property Name="id_contas_a_receber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_cliente" Type="int" Nullable="true" />
-    <Property Name="descrição" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="valor_a_receber" Type="float" Nullable="true" />
-    <Property Name="valor_recebido" Type="float" Nullable="true" />
-    <Property Name="data_a_receber" Type="datetime" Nullable="true" />
-    <Property Name="data_recebimento" Type="datetime" Nullable="true" />
-    <Property Name="valor_juros_recebimento" Type="float" Nullable="true" />
-    <Property Name="valor_desconto_recebimento" Type="float" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Endereco">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="rua" Type="nchar" Nullable="true" MaxLength="20" />
-    <Property Name="numero" Type="nchar" Nullable="true" MaxLength="10" />
-    <Property Name="complemento" Type="nchar" Nullable="true" MaxLength="20" />
-    <Property Name="cep" Type="int" Nullable="true" />
-    <Property Name="estado" Type="nchar" Nullable="true" MaxLength="20" />
-    <Property Name="cidade" Type="nchar" Nullable="true" MaxLength="20" />
-    <Property Name="pais" Type="nchar" Nullable="true" MaxLength="20" />
-  </EntityType>
-  <EntityType Name="Fornecedor">
-    <Key>
-      <PropertyRef Name="id_fornecedor" />
-    </Key>
-    <Property Name="id_fornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_endereco" Type="int" Nullable="true" />
-    <Property Name="id_status_fornecedor" Type="int" Nullable="true" />
-    <Property Name="razao_social_fornecedor" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="email" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="telefone" Type="decimal" Nullable="true" Precision="18" Scale="0" />
-    <Property Name="cnpj" Type="decimal" Nullable="true" Precision="18" Scale="0" />
-  </EntityType>
-  <EntityType Name="Status_Usuario_Fornecedor">
-    <Key>
-      <PropertyRef Name="id_status" />
-    </Key>
-    <Property Name="id_status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="status_Ativo_Inativo" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Usuarios">
-    <Key>
-      <PropertyRef Name="id_usuario" />
-    </Key>
-    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nome_usuario" Type="varchar" Nullable="true" MaxLength="100" />
-    <Property Name="email_usuario" Type="varchar" Nullable="true" MaxLength="100" />
-    <Property Name="senha" Type="varchar" Nullable="true" MaxLength="12" />
-    <Property Name="confirmar_senha" Type="varchar" Nullable="true" MaxLength="12" />
-    <Property Name="id_endereco" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Contas_a_Pagar">
-    <Key>
-      <PropertyRef Name="id_contas_a_pagar" />
-    </Key>
-    <Property Name="id_contas_a_pagar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_fornecedor" Type="int" Nullable="true" />
-    <Property Name="descricao" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="valor_a_pagar" Type="float" Nullable="true" />
-    <Property Name="valor_pago" Type="float" Nullable="true" />
-    <Property Name="data_pagamento" Type="datetime" Nullable="true" />
-    <Property Name="data_valor_pago" Type="datetime" Nullable="true" />
-    <Property Name="valor_juros_pago" Type="float" Nullable="true" />
-    <Property Name="valor_deconto_pago" Type="float" Nullable="true" />
-    <Property Name="produto_contasapagar" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="quantidade" Type="decimal" Nullable="true" Precision="18" Scale="0" />
-    <Property Name="valor_unitario" Type="int" Nullable="true" />
-  </EntityType>
-  <Association Name="fk_cliente_idcliente">
-    <End Role="Endereco" Type="testeModel.Store.Endereco" Multiplicity="0..1" />
-    <End Role="Cliente" Type="testeModel.Store.Cliente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Endereco">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Cliente">
-        <PropertyRef Name="id_endereco" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_cliente_Status_Cliente">
-    <End Role="Status_Usuario_Fornecedor" Type="testeModel.Store.Status_Usuario_Fornecedor" Multiplicity="0..1" />
-    <End Role="Cliente" Type="testeModel.Store.Cliente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Status_Usuario_Fornecedor">
-        <PropertyRef Name="id_status" />
-      </Principal>
-      <Dependent Role="Cliente">
-        <PropertyRef Name="id_status_cliente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_contas_a_receber_id_cliente">
-    <End Role="Cliente" Type="testeModel.Store.Cliente" Multiplicity="0..1" />
-    <End Role="Contas_a_Receber" Type="testeModel.Store.Contas_a_Receber" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Cliente">
-        <PropertyRef Name="id_cliente" />
-      </Principal>
-      <Dependent Role="Contas_a_Receber">
-        <PropertyRef Name="id_cliente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_endereco_id_fornecedor">
-    <End Role="Endereco" Type="testeModel.Store.Endereco" Multiplicity="0..1" />
-    <End Role="Fornecedor" Type="testeModel.Store.Fornecedor" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Endereco">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Fornecedor">
-        <PropertyRef Name="id_endereco" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_usuarios_idEndereco">
-    <End Role="Endereco" Type="testeModel.Store.Endereco" Multiplicity="0..1" />
-    <End Role="Usuarios" Type="testeModel.Store.Usuarios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Endereco">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Usuarios">
-        <PropertyRef Name="id_endereco" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_fornecedor_Status_Fornecedor">
-    <End Role="Status_Usuario_Fornecedor" Type="testeModel.Store.Status_Usuario_Fornecedor" Multiplicity="0..1" />
-    <End Role="Fornecedor" Type="testeModel.Store.Fornecedor" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Status_Usuario_Fornecedor">
-        <PropertyRef Name="id_status" />
-      </Principal>
-      <Dependent Role="Fornecedor">
-        <PropertyRef Name="id_status_fornecedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_contas_a_pagar_id_fornecedor">
-    <End Role="Fornecedor" Type="testeModel.Store.Fornecedor" Multiplicity="0..1" />
-    <End Role="Contas_a_Pagar" Type="testeModel.Store.Contas_a_Pagar" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Fornecedor">
-        <PropertyRef Name="id_fornecedor" />
-      </Principal>
-      <Dependent Role="Contas_a_Pagar">
-        <PropertyRef Name="id_fornecedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+        <EntityContainer Name="testeModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="testeModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contas_a_Pagar" EntityType="testeModel.Store.Contas_a_Pagar" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contas_a_Receber" EntityType="testeModel.Store.Contas_a_Receber" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Endereco" EntityType="testeModel.Store.Endereco" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Fornecedor" EntityType="testeModel.Store.Fornecedor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Status_Usuario_Fornecedor" EntityType="testeModel.Store.Status_Usuario_Fornecedor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="testeModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="fk_cliente_idcliente" Association="testeModel.Store.fk_cliente_idcliente">
+            <End Role="Endereco" EntitySet="Endereco" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cliente_Status_Cliente" Association="testeModel.Store.fk_cliente_Status_Cliente">
+            <End Role="Status_Usuario_Fornecedor" EntitySet="Status_Usuario_Fornecedor" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contas_a_pagar_id_fornecedor" Association="testeModel.Store.fk_contas_a_pagar_id_fornecedor">
+            <End Role="Fornecedor" EntitySet="Fornecedor" />
+            <End Role="Contas_a_Pagar" EntitySet="Contas_a_Pagar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contas_a_receber_id_cliente" Association="testeModel.Store.fk_contas_a_receber_id_cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Contas_a_Receber" EntitySet="Contas_a_Receber" />
+          </AssociationSet>
+          <AssociationSet Name="fk_endereco_id_fornecedor" Association="testeModel.Store.fk_endereco_id_fornecedor">
+            <End Role="Endereco" EntitySet="Endereco" />
+            <End Role="Fornecedor" EntitySet="Fornecedor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fornecedor_Status_Fornecedor" Association="testeModel.Store.fk_fornecedor_Status_Fornecedor">
+            <End Role="Status_Usuario_Fornecedor" EntitySet="Status_Usuario_Fornecedor" />
+            <End Role="Fornecedor" EntitySet="Fornecedor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuarios_idEndereco" Association="testeModel.Store.fk_usuarios_idEndereco">
+            <End Role="Endereco" EntitySet="Endereco" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RG" Type="int" />
+          <Property Name="CPF" Type="int" />
+          <Property Name="data_nascimento" Type="datetime" />
+          <Property Name="nome_cliente" Type="varchar" MaxLength="50" />
+          <Property Name="id_endereco" Type="int" />
+          <Property Name="id_status_cliente" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="telefone" Type="decimal" />
+        </EntityType>
+        <EntityType Name="Contas_a_Pagar">
+          <Key>
+            <PropertyRef Name="id_contas_a_pagar" />
+          </Key>
+          <Property Name="id_contas_a_pagar" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_fornecedor" Type="int" />
+          <Property Name="descricao" Type="varchar" MaxLength="50" />
+          <Property Name="valor_a_pagar" Type="float" />
+          <Property Name="valor_pago" Type="float" />
+          <Property Name="data_pagamento" Type="datetime" />
+          <Property Name="data_valor_pago" Type="datetime" />
+          <Property Name="valor_juros_pago" Type="float" />
+          <Property Name="valor_deconto_pago" Type="float" />
+          <Property Name="produto_contasapagar" Type="varchar" MaxLength="50" />
+          <Property Name="quantidade" Type="decimal" />
+          <Property Name="valor_unitario" Type="int" />
+        </EntityType>
+        <EntityType Name="Contas_a_Receber">
+          <Key>
+            <PropertyRef Name="id_contas_a_receber" />
+          </Key>
+          <Property Name="id_contas_a_receber" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="int" />
+          <Property Name="descrição" Type="varchar" MaxLength="50" />
+          <Property Name="valor_a_receber" Type="float" />
+          <Property Name="valor_recebido" Type="float" />
+          <Property Name="data_a_receber" Type="datetime" />
+          <Property Name="data_recebimento" Type="datetime" />
+          <Property Name="valor_juros_recebimento" Type="float" />
+          <Property Name="valor_desconto_recebimento" Type="float" />
+        </EntityType>
+        <EntityType Name="Endereco">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="rua" Type="nchar" MaxLength="20" />
+          <Property Name="numero" Type="nchar" MaxLength="10" />
+          <Property Name="complemento" Type="nchar" MaxLength="20" />
+          <Property Name="cep" Type="int" />
+          <Property Name="estado" Type="nchar" MaxLength="20" />
+          <Property Name="cidade" Type="nchar" MaxLength="20" />
+          <Property Name="pais" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Fornecedor">
+          <Key>
+            <PropertyRef Name="id_fornecedor" />
+          </Key>
+          <Property Name="id_fornecedor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_endereco" Type="int" />
+          <Property Name="id_status_fornecedor" Type="int" />
+          <Property Name="razao_social_fornecedor" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="telefone" Type="decimal" />
+          <Property Name="cnpj" Type="decimal" />
+        </EntityType>
+        <EntityType Name="Status_Usuario_Fornecedor">
+          <Key>
+            <PropertyRef Name="id_status" />
+          </Key>
+          <Property Name="id_status" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="status_Ativo_Inativo" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nome_usuario" Type="varchar" MaxLength="100" />
+          <Property Name="email_usuario" Type="varchar" MaxLength="100" />
+          <Property Name="senha" Type="varchar" MaxLength="12" />
+          <Property Name="confirmar_senha" Type="varchar" MaxLength="12" />
+          <Property Name="id_endereco" Type="int" />
+        </EntityType>
+        <Association Name="fk_cliente_idcliente">
+          <End Role="Endereco" Type="testeModel.Store.Endereco" Multiplicity="0..1" />
+          <End Role="Cliente" Type="testeModel.Store.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="id_endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cliente_Status_Cliente">
+          <End Role="Status_Usuario_Fornecedor" Type="testeModel.Store.Status_Usuario_Fornecedor" Multiplicity="0..1" />
+          <End Role="Cliente" Type="testeModel.Store.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_Usuario_Fornecedor">
+              <PropertyRef Name="id_status" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="id_status_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contas_a_pagar_id_fornecedor">
+          <End Role="Fornecedor" Type="testeModel.Store.Fornecedor" Multiplicity="0..1" />
+          <End Role="Contas_a_Pagar" Type="testeModel.Store.Contas_a_Pagar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fornecedor">
+              <PropertyRef Name="id_fornecedor" />
+            </Principal>
+            <Dependent Role="Contas_a_Pagar">
+              <PropertyRef Name="id_fornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contas_a_receber_id_cliente">
+          <End Role="Cliente" Type="testeModel.Store.Cliente" Multiplicity="0..1" />
+          <End Role="Contas_a_Receber" Type="testeModel.Store.Contas_a_Receber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="Contas_a_Receber">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_endereco_id_fornecedor">
+          <End Role="Endereco" Type="testeModel.Store.Endereco" Multiplicity="0..1" />
+          <End Role="Fornecedor" Type="testeModel.Store.Fornecedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Fornecedor">
+              <PropertyRef Name="id_endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fornecedor_Status_Fornecedor">
+          <End Role="Status_Usuario_Fornecedor" Type="testeModel.Store.Status_Usuario_Fornecedor" Multiplicity="0..1" />
+          <End Role="Fornecedor" Type="testeModel.Store.Fornecedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_Usuario_Fornecedor">
+              <PropertyRef Name="id_status" />
+            </Principal>
+            <Dependent Role="Fornecedor">
+              <PropertyRef Name="id_status_fornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuarios_idEndereco">
+          <End Role="Endereco" Type="testeModel.Store.Endereco" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="testeModel.Store.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="id_endereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="testeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -276,7 +276,7 @@
           <Property Name="id_cliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="RG" Type="Int32" />
           <Property Name="CPF" Type="Int32" />
-          <Property Name="data_nascimento" Type="DateTime" Nullable="true" Precision="0" />
+          <Property Name="data_nascimento" Type="DateTime" Nullable="true" Precision="3" />
           <Property Name="nome_cliente" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="id_endereco" Type="Int32" />
           <Property Name="id_status_cliente" Type="Int32" />
@@ -295,8 +295,8 @@
           <Property Name="descrição" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="valor_a_receber" Type="Double" />
           <Property Name="valor_recebido" Type="Double" />
-          <Property Name="data_a_receber" Type="DateTime" Precision="0" />
-          <Property Name="data_recebimento" Type="DateTime" Precision="0" />
+          <Property Name="data_a_receber" Type="DateTime" Precision="3" />
+          <Property Name="data_recebimento" Type="DateTime" Precision="3" />
           <Property Name="valor_juros_recebimento" Type="Double" />
           <Property Name="valor_desconto_recebimento" Type="Double" />
           <NavigationProperty Name="Cliente" Relationship="testeModel.fk_contas_a_receber_id_cliente" FromRole="Contas_a_Receber" ToRole="Cliente" />
@@ -434,8 +434,8 @@
           <Property Type="String" Name="descricao" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Double" Name="valor_a_pagar" />
           <Property Type="Double" Name="valor_pago" />
-          <Property Type="DateTime" Name="data_pagamento" Precision="0" />
-          <Property Type="DateTime" Name="data_valor_pago" Precision="0" />
+          <Property Type="DateTime" Name="data_pagamento" Precision="3" />
+          <Property Type="DateTime" Name="data_valor_pago" Precision="3" />
           <NavigationProperty Name="Fornecedor" Relationship="testeModel.fk_contas_a_pagar_id_fornecedor" FromRole="Contas_a_Pagar" ToRole="Fornecedor" />
           <Property Type="Double" Name="valor_juros_pago" />
           <Property Type="Double" Name="valor_deconto_pago" />

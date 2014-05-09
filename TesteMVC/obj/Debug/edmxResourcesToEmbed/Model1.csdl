@@ -57,7 +57,7 @@
     <Property Name="id_cliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="RG" Type="Int32" />
     <Property Name="CPF" Type="Int32" />
-    <Property Name="data_nascimento" Type="DateTime" Nullable="true" Precision="0" />
+    <Property Name="data_nascimento" Type="DateTime" Nullable="true" Precision="3" />
     <Property Name="nome_cliente" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="id_endereco" Type="Int32" />
     <Property Name="id_status_cliente" Type="Int32" />
@@ -76,8 +76,8 @@
     <Property Name="descrição" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="valor_a_receber" Type="Double" />
     <Property Name="valor_recebido" Type="Double" />
-    <Property Name="data_a_receber" Type="DateTime" Precision="0" />
-    <Property Name="data_recebimento" Type="DateTime" Precision="0" />
+    <Property Name="data_a_receber" Type="DateTime" Precision="3" />
+    <Property Name="data_recebimento" Type="DateTime" Precision="3" />
     <Property Name="valor_juros_recebimento" Type="Double" />
     <Property Name="valor_desconto_recebimento" Type="Double" />
     <NavigationProperty Name="Cliente" Relationship="testeModel.fk_contas_a_receber_id_cliente" FromRole="Contas_a_Receber" ToRole="Cliente" />
@@ -215,8 +215,8 @@
     <Property Type="String" Name="descricao" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="Double" Name="valor_a_pagar" />
     <Property Type="Double" Name="valor_pago" />
-    <Property Type="DateTime" Name="data_pagamento" Precision="0" />
-    <Property Type="DateTime" Name="data_valor_pago" Precision="0" />
+    <Property Type="DateTime" Name="data_pagamento" Precision="3" />
+    <Property Type="DateTime" Name="data_valor_pago" Precision="3" />
     <NavigationProperty Name="Fornecedor" Relationship="testeModel.fk_contas_a_pagar_id_fornecedor" FromRole="Contas_a_Pagar" ToRole="Fornecedor" />
     <Property Type="Double" Name="valor_juros_pago" />
     <Property Type="Double" Name="valor_deconto_pago" />

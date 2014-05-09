@@ -270,6 +270,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\menu.css" />
     <Content Include="Content\base.css" />
+    <Content Include="Content\themes\base\images\Alta Performance Suplementos.png" />
     <Content Include="Content\themes\base\images\logo projeto.png" />
     <Content Include="Scripts\MenuDropDown.js" />
     <Content Include="Content\Site.css" />
