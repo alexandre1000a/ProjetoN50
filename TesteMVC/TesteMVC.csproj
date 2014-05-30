@@ -271,6 +271,15 @@
     <Content Include="Content\menu.css" />
     <Content Include="Content\base.css" />
     <Content Include="Content\themes\base\images\Alta Performance Suplementos.png" />
+    <Content Include="Content\themes\base\images\bg-h1.png" />
+    <Content Include="Content\themes\base\images\bg-header-content.png" />
+    <Content Include="Content\themes\base\images\bg-header.png" />
+    <Content Include="Content\themes\base\images\btn-cadastrar.png" />
+    <Content Include="Content\themes\base\images\btn-entrar.png" />
+    <Content Include="Content\themes\base\images\btn-sair.png" />
+    <Content Include="Content\themes\base\images\bullet.png" />
+    <Content Include="Content\themes\base\images\icon-engrenagem.png" />
+    <Content Include="Content\themes\base\images\icon-seta.png" />
     <Content Include="Content\themes\base\images\logo projeto.png" />
     <Content Include="Scripts\MenuDropDown.js" />
     <Content Include="Content\Site.css" />

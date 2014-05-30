@@ -6,22 +6,17 @@
 <h2>Gerar Compra</h2>
 
 
-<table runat="server" >
-
-        
-    
-    <tr><b> Nome </b> </tr>
-            @foreach (var item in Model)
-            {
-                <tr>    
-                    <td>
-                        @item.razao_social_fornecedor 
-                    </td>
-                  @*<a href="~/CadastrarEnderecoCliente/CadastrarEndereco?id=@item.id_cliente">Cadasdrar Endereço</a>*@
-                     <td>     @Html.ActionLink("Gerar Compra", "index","ContasPagar", new {id_fornecedor= @item.id_fornecedor}, null)  </td>
-             
-                                 
-                </tr>
-             
-                
-            }
+<table runat="server" class="table">    
+    <tr>
+        <th>Nome</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        @*<a href="~/CadastrarEnderecoCliente/CadastrarEndereco?id=@item.id_cliente">Cadasdrar Endereço</a>*@
+        <tr>    
+            <td>  @item.razao_social_fornecedor  </td>
+            <td> @Html.ActionLink("Gerar Compra", "index","ContasPagar", new {id_fornecedor= @item.id_fornecedor}, null)  </td> 
+        </tr>
+    }
+</table>
